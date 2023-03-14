@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "294579902380",
+    "project_id": "confianca-1969a",
+    "storage_bucket": "confianca-1969a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294579902380:android:f4b1cb31eefa7efa508c09",
+        "android_client_info": {
+          "package_name": "com.example.confianca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294579902380-0dtrj34jk7ujcs2ebt5irkji1874k4gc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOZmYEfOMk2h8ciTxBg6oztJdRhUdsE2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294579902380-0dtrj34jk7ujcs2ebt5irkji1874k4gc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

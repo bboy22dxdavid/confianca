@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'basescreen.dart';
 
 
 class IntroScreen extends StatefulWidget {
@@ -27,7 +28,7 @@ class _IntroScreenState extends State<IntroScreen> {
               Color(0xff93291E)
             ]
           ),
-          //navigateAfterSeconds: LoginScreen(),
+          navigateAfterSeconds: BaseScreen(),
           loaderColor: Colors.transparent,
         ),
         const Padding(
@@ -35,7 +36,7 @@ class _IntroScreenState extends State<IntroScreen> {
           child:  Text(
             "Seja Bem vindo a!",
             style: TextStyle(
-              color: Colors.white,
+              color: Color(0xfffff8e1),
               fontSize: 24,
               decoration: TextDecoration.none,
             ),
@@ -48,7 +49,7 @@ class _IntroScreenState extends State<IntroScreen> {
               fit: BoxFit.contain
             )
           ),
-        )
+        ),
       ],
     );
   }

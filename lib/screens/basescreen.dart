@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../common/custom_drawer/custom_drawer.dart';
 import '../models/page_maneger.dart';
+import '../utility/cores.dart';
 
 /*
   *PAGINA BASE DE CONTROLE DE NAVEGAÇÃO
@@ -25,18 +26,21 @@ class BaseScreen extends StatelessWidget {
             drawer: const CostomDrawer(),
             appBar: AppBar(
               title: const Text('Inicio'),
+              backgroundColor:  Cores.primary,
             ),
           ),
           Scaffold(
             drawer: const CostomDrawer(),
             appBar: AppBar(
               title: const Text('Cadastro'),
+              backgroundColor:  Cores.primary,
             ),
           ),
           Scaffold(
             drawer: const CostomDrawer(),
             appBar: AppBar(
               title: const Text('Listar'),
+              backgroundColor:  Cores.primary,
             ),
           ),
         ],

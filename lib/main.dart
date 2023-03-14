@@ -4,19 +4,28 @@ import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  /*
-  *INICIANDO O FIREBASE
-   */
   await Firebase.initializeApp();
-
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: IntroScreen(),
-  ));
-  /*
-  *ESTRUTURANDO E ADD NO BANCO
-  * FIREBASE SALVAR AS ESTRUTURAS EM FORMAT DE MAP
-   */
-  //FirebaseFirestore.instance.collection('test').add({'test': 'test'});
+  runApp(MyApp());
 }
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Barbearia Confiança',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: const Color.fromARGB(255, 4, 125, 141),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 4, 125, 141),
+        appBarTheme: const AppBarTheme(
+            elevation: 0
+        ),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const  IntroScreen(),
+    );
+  }
+}
+

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'basescreen.dart';
-
+/*
+  *PAGINA DE ABERTURA DO APP
+*/
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({Key? key}) : super(key: key);

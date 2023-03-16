@@ -5,4 +5,5 @@ class Cores {
   static Color second = const Color.fromARGB(255, 135,206,235);
   static Color third = const Color.fromARGB(255, 112,128,144);
   static Color font = const Color.fromARGB(255, 105, 105, 105);
+  static Color erro = const Color.fromARGB(255, 243, 8, 8);
 }

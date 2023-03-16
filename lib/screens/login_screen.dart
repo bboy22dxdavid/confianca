@@ -1,5 +1,8 @@
 import 'package:confianca/helpers/validators.dart';
+import 'package:confianca/models/user.dart';
+import 'package:confianca/models/user_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../utility/cores.dart';
 
 /*
@@ -90,8 +93,37 @@ class LoginScreen extends StatelessWidget {
                         onPressed: () {
                           //condição para validar os campos
                           if(formkey.currentState!.validate()){
-                            //debugando variavel p/ conferir se esta pegando o valor correto
-                              print('${emailController.text}  \n ${passController.text} ');
+                            /*debugando variavel p/ conferir se esta pegando o valor correto
+                              *print('${emailController.text}  \n ${passController.text} ');
+                             */
+
+                            //autenticando e salvando emai e senha no banco
+                            context.read<UserManager>().signIn(
+                                userApp: UsersApp(
+                                email: emailController.text,
+                                password: passController.text
+                              ),
+                                failFunction: (e){
+                                  //print('erro ao entra na função de onfail ${e} ');
+
+                                  final snackBar = SnackBar(
+                                    content:  Text('Falha ao entrar: $e'),
+                                    backgroundColor: Colors.red,
+                                  );
+                                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                                },
+                                sucessFunction: (){
+                                  //print('sucesso ao entra na função onSuccess !');
+                                  // TODO: FECHAR TELA DE LOGIN
+                                  const snackBar = SnackBar(
+                                    content:   Text('sucesso ao Logar '),
+                                    backgroundColor: Colors.green,
+                                  );
+                                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                                }
+                            );
                           }
 
                         },

@@ -1,6 +1,8 @@
+import 'package:confianca/models/user_manager.dart';
 import 'package:confianca/screens/intro_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,18 +15,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Barbearia Confiança',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: const Color.fromARGB(255, 4, 125, 141),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 4, 125, 141),
-        appBarTheme: const AppBarTheme(
-            elevation: 0
+    return Provider(
+      create: (_) => UserManager(),
+      child: MaterialApp(
+        title: 'Barbearia Confiança',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: const Color.fromARGB(255, 4, 125, 141),
+          scaffoldBackgroundColor: const Color.fromARGB(255, 4, 125, 141),
+          appBarTheme: const AppBarTheme(
+              elevation: 0
+          ),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        home: const  IntroScreen(),
       ),
-      home: const  IntroScreen(),
     );
   }
 }
